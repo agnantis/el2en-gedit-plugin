@@ -1,0 +1,9 @@
+[Plugin]
+Loader=python
+Module=el2en_converter
+IAge=3
+Name=Keyboard layout converter
+Description=Converts greeklish to english and vice versa
+Authors=Kostas Agnantis <kagnadis@gmail.com>
+Copyright=Copyright © 2012 Kostas Agnantis <kagnadis@gmail.com>
+Website=http://akonstantine.blogspot.com
