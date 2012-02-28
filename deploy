@@ -1,0 +1,9 @@
+#~/bin/bash
+#create the directory for gedit plugins
+GEDIT_PLUGIN_DIR=".local/share/gedit/plugins/el2en"
+echo "Creating folder..."
+mkdir -p $HOME/$GEDIT_PLUGIN_DIR
+echo "Copying files"
+cp *.py $HOME/$GEDIT_PLUGIN_DIR/
+cp *.plugin $HOME/$GEDIT_PLUGIN_DIR/
+echo "Files copied"
