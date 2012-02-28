@@ -78,8 +78,6 @@ class El2enWindowActivatable(GObject.Object, Gedit.WindowActivatable):
     (start, end) = doc.get_selection_bounds()
     selection = doc.get_text(start, end, True) #True: get non-printable characters too
     new_text = self.converter.toggle_layout(selection)
-    for ch in selection:
-        new_text += '*'
     doc.delete(start, end)
     doc.insert(start, new_text)
         

@@ -32,7 +32,7 @@ class Converter:
     self.layout2to1 = EN_TO_EL
     
   def toggle_layout(self, text):
-    text = text.encode('utf-8') 
+    #text = text.encode('utf-8') 
     new_text = ''
     skip_next = False
     for i in range(len(text)):
