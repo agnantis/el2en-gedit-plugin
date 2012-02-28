@@ -41,8 +41,8 @@ class El2enWindowActivatable(GObject.Object, Gedit.WindowActivatable):
     # Create a new action group
     self._action_group = Gtk.ActionGroup("El2enPluginActions")
     self._action_group.add_actions([("el2en", None, _("Toggle layout (El/En)"),
-                                     None, _("Toggle layout (El/En)"),
-                                     self.on_clear_document_activate)])
+                                     "<Ctrl><Shift>T", _("Toggle layout (El/En)"),
+                                     self.on_toggle_selection)])
 
     # Insert the action group
     manager.insert_action_group(self._action_group, -1)
@@ -67,7 +67,7 @@ class El2enWindowActivatable(GObject.Object, Gedit.WindowActivatable):
     self._action_group.set_sensitive(self.window.get_active_document() != None)
 
   # Menu activate handlers
-  def on_clear_document_activate(self, action):
+  def on_toggle_selection(self, action):
     doc = self.window.get_active_document()
     if not doc:
         return

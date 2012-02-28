@@ -30,9 +30,11 @@ class Converter:
   def __init__(self):
     self.layout1to2 = EL_TO_EN
     self.layout2to1 = EN_TO_EL
+    self._debug = False
     
   def toggle_layout(self, text):
-    #text = text.encode('utf-8') 
+    text = text.decode('utf-8')
+    #text = unicode(text)
     new_text = ''
     skip_next = False
     for i in range(len(text)):
@@ -41,6 +43,7 @@ class Converter:
         continue
       skip_next = False
       ch = text[i]
+      if self._debug: print ch
       # check if is a case of accent greek (e.g. ά, ί) -> ;a ;i
       if ch == GREEK_ACCENT:
         next = ch + text[i+1]
